@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  STREET FOOD COTONOU — design tokens                                */
+/* ------------------------------------------------------------------ */
+:root {
+  /* brand palette */
+  --street-red: #e91616;
+  --street-black: #090909;
+  --street-white: #f8f5ef;
+  --street-yellow: #ffc928;
+  --street-orange: #ff641f;
+
+  /* shadcn-compatible semantic tokens (light) */
+  --background: #f8f5ef;
+  --foreground: #090909;
+  --card: #ffffff;
+  --card-foreground: #090909;
+  --popover: #ffffff;
+  --popover-foreground: #090909;
+  --primary: #e91616;
+  --primary-foreground: #f8f5ef;
+  --secondary: #ffc928;
+  --secondary-foreground: #090909;
+  --muted: #ece7dd;
+  --muted-foreground: #6b6357;
+  --accent: #ff641f;
+  --accent-foreground: #f8f5ef;
+  --destructive: #b91c1c;
+  --destructive-foreground: #f8f5ef;
+  --border: #090909;
+  --input: #cfc8ba;
+  --ring: #e91616;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-street-red: var(--street-red);
+  --color-street-black: var(--street-black);
+  --color-street-white: var(--street-white);
+  --color-street-yellow: var(--street-yellow);
+  --color-street-orange: var(--street-orange);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-anton), var(--font-inter), sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-marquee: marquee 22s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0b0b;
+    --foreground: #f8f5ef;
+    --card: #141414;
+    --card-foreground: #f8f5ef;
+    --popover: #141414;
+    --popover-foreground: #f8f5ef;
+    --primary: #e91616;
+    --primary-foreground: #ffffff;
+    --secondary: #ffc928;
+    --secondary-foreground: #090909;
+    --muted: #1c1c1c;
+    --muted-foreground: #a8a29e;
+    --accent: #ff641f;
+    --accent-foreground: #ffffff;
+    --border: #2a2a2a;
+    --input: #2a2a2a;
+    --ring: #e91616;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+/* utility for the plain-CSS marquee used in the poster band */
+.animate-marquee {
+  animation: var(--animate-marquee);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
