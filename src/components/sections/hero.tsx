@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { unsplash } from "@/lib/utils";
+import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -15,7 +16,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] md:text-sm">
-            Street Food · Cotonou
+            Street Food · Haie Vive, Cotonou
           </p>
 
           <h1 className="font-display text-[clamp(3.25rem,9vw,8rem)] font-black uppercase leading-[1.06] tracking-[0.01em] [text-wrap:balance]">
@@ -25,9 +26,16 @@ export function Hero() {
             <span className="block text-street-yellow">d&apos;accord.</span>
           </h1>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <p className="mt-6 font-display text-2xl uppercase tracking-wide md:text-3xl">
+            {SITE.slogan}
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
             <span className="rounded-full bg-street-yellow px-5 py-2 text-sm font-black uppercase text-street-black">
               À partir de 1 000 FCFA
+            </span>
+            <span className="rounded-full border border-white/60 px-5 py-2 text-sm font-black uppercase">
+              {SITE.hours}
             </span>
           </div>
 

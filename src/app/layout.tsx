@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Street Food Cotonou",
   },
   description:
-    "Découvrez Street Food à Haie Vive, Cotonou. Pâtes, plats généreux, boissons et offres accessibles. Commandez sur place ou à emporter.",
+    "Street Food, Haie Vive (50 m après le 3.14), Cotonou. Goût de luxe, prix de rue : pâtes, burgers, indomie et boissons dès 1 000 FCFA. Ouvert mardi à dimanche, 17h – 06h. Sur place ou à emporter.",
   keywords: [
     "street food",
     "Cotonou",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     locale: "fr_BJ",
     url: siteUrl,
     siteName: "Street Food Cotonou",
-    title: "Street Food Cotonou | Plats à partir de 1 000 FCFA",
+    title: "Street Food Cotonou | Goût de luxe, prix de rue",
     description:
-      "Pâtes, plats généreux, boissons et offres accessibles à Haie Vive, Cotonou.",
+      "Pâtes, burgers, indomie et boissons dès 1 000 FCFA à Haie Vive, Cotonou. Ouvert mardi à dimanche, 17h – 06h.",
   },
   twitter: {
     card: "summary_large_image",

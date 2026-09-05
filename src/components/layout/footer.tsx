@@ -7,8 +7,11 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1440px] gap-8 px-4 py-14 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
           <p className="font-display text-3xl uppercase">Street Food</p>
+          <p className="mt-1 font-display text-lg uppercase text-street-yellow">
+            {SITE.slogan}
+          </p>
           <p className="mt-2 max-w-sm text-street-white/60">
-            La street food qui met tout le monde d&apos;accord. {SITE.address}.
+            {SITE.address}. Ouvert {SITE.hours.toLowerCase()}.
           </p>
         </div>
 
@@ -66,7 +69,10 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href={`tel:+${SITE.whatsapp}`} className="hover:text-white">
+              <a
+                href={`tel:${SITE.phoneIntl.replace(/\s/g, "")}`}
+                className="hover:text-white"
+              >
                 {SITE.phoneDisplay}
               </a>
             </li>

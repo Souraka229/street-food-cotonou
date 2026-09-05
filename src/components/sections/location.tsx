@@ -41,10 +41,10 @@ export function Location() {
               <MessageCircle className="size-5" /> WhatsApp
             </a>
             <a
-              href={`tel:+${SITE.whatsapp}`}
+              href={`tel:${SITE.phoneIntl.replace(/\s/g, "")}`}
               className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 font-black uppercase transition hover:bg-white hover:text-street-black"
             >
-              <Phone className="size-5" /> Appeler
+              <Phone className="size-5" /> {SITE.phoneDisplay}
             </a>
           </div>
         </div>
@@ -52,7 +52,7 @@ export function Location() {
         <div className="overflow-hidden rounded-2xl border-2 border-street-white/20">
           <iframe
             title="Carte — Street Food Cotonou, Haie Vive"
-            src="https://www.google.com/maps?q=Haie%20Vive%20Cotonou&output=embed"
+            src="https://www.google.com/maps?q=Haie+Vive+Cotonou+3.14&output=embed"
             className="h-[360px] w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

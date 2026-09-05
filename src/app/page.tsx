@@ -19,16 +19,18 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: SITE.name,
+  slogan: SITE.slogan,
   servesCuisine: ["Street food", "Africaine", "Fast food"],
   priceRange: "1000 - 3000 FCFA",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cotonou",
-    streetAddress: "Haie Vive",
+    streetAddress: "Haie Vive, 50 m après le 3.14",
     addressCountry: "BJ",
   },
-  telephone: `+${SITE.whatsapp}`,
-  openingHours: "Mo-Su 11:00-23:00",
+  telephone: SITE.phoneIntl,
+  openingHours: SITE.hoursSchemaOrg,
+  sameAs: [SITE.instagram, SITE.tiktok],
   url: SITE.url,
 };
 

@@ -49,8 +49,8 @@ et textes sont passés à l'identité Street Food.
 
 ## Personnaliser
 
-- **Coordonnées / WhatsApp / réseaux** → `src/lib/site.ts` (numéro WhatsApp au
-  format international, chiffres uniquement).
+- **Coordonnées / WhatsApp / réseaux / horaires** → `src/lib/site.ts` (numéro
+  WhatsApp au format international, chiffres uniquement — ex. `2290197030344`).
 - **Menu et prix** → `src/lib/menu-data.ts`.
 - **Couleurs / typo** → variables `--street-*` dans `src/app/globals.css`.
 
