@@ -18,14 +18,11 @@ export function Hero() {
             Street Food · Cotonou
           </p>
 
-          <h1 className="font-display text-[clamp(3.25rem,9vw,8rem)] font-black uppercase leading-[0.82]">
-            La street food
-            <br />
-            qui met tout
-            <br />
-            le monde
-            <br />
-            <span className="text-street-yellow">d&apos;accord.</span>
+          <h1 className="font-display text-[clamp(3.25rem,9vw,8rem)] font-black uppercase leading-[1.06] tracking-[0.01em] [text-wrap:balance]">
+            <span className="block">La street food</span>
+            <span className="block">qui met tout</span>
+            <span className="block">le monde</span>
+            <span className="block text-street-yellow">d&apos;accord.</span>
           </h1>
 
           <div className="mt-8 flex flex-wrap gap-3">
