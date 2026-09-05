@@ -29,7 +29,7 @@ const jsonLd = {
   },
   telephone: `+${SITE.whatsapp}`,
   openingHours: "Mo-Su 11:00-23:00",
-  url: "https://street-food-cotonou.vercel.app",
+  url: SITE.url,
 };
 
 export default function HomePage() {

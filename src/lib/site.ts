@@ -1,6 +1,7 @@
 /** Central place for the info the owner will want to edit. */
 export const SITE = {
   name: "Street Food Cotonou",
+  url: "https://street-sepia.vercel.app",
   /** WhatsApp number in international format, digits only. */
   whatsapp: "22990000000",
   phoneDisplay: "+229 90 00 00 00",

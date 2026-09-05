@@ -3,6 +3,7 @@ import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { FloatingCart } from "@/components/cart/floating-cart";
+import { SITE } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,7 +18,7 @@ const anton = Anton({
   display: "swap",
 });
 
-const siteUrl = "https://street-food-cotonou.vercel.app";
+const siteUrl = SITE.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
