@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Street Food Cotonou
 
-## Getting Started
+Site officiel de **Street Food Cotonou** — mobile-first, pensé pour convertir le
+trafic TikTok / Instagram / Google / WhatsApp en commandes.
 
-First, run the development server:
+**En ligne :** https://street-sepia.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4 (tokens dans `src/app/globals.css`)
+- Structure shadcn/ui (`components.json`, `src/components/ui`, `@/lib/utils`)
+- framer-motion pour les animations
+- lucide-react pour les icônes
+
+## Structure
+
+```
+src/
+├── app/                # routes : / /menu /commander /experience /contact
+│   ├── globals.css     # design system (rouge/noir/off-white/jaune) + tokens shadcn
+│   ├── layout.tsx      # polices Anton + Inter, SEO, CartProvider
+│   ├── robots.ts / sitemap.ts
+├── components/
+│   ├── ui/             # composants 21st.dev + shadcn (voir plus bas)
+│   ├── sections/       # sections de la landing (hero, marquee, menu, promo…)
+│   ├── menu/           # MenuCard, MenuBrowser (filtres par catégorie)
+│   ├── cart/           # panier global (localStorage) + panier flottant
+│   ├── checkout/       # formulaire de commande → WhatsApp
+│   └── layout/         # Navbar, Footer
+└── lib/
+    ├── site.ts         # ⚙️ infos à éditer : WhatsApp, adresse, horaires, réseaux
+    ├── menu-data.ts    # ⚙️ le menu (plats, prix, catégories, images)
+    └── utils.ts        # cn(), unsplash(), formatFcfa()
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Composants 21st.dev intégrés (`src/components/ui/`)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Fichier | Rôle |
+| --- | --- |
+| `button.tsx` | Bouton shadcn (base) |
+| `gallery.tsx` | `PhotoGallery` — galerie draggable → section « Bienvenue chez Street Food » |
+| `scroll-expansion-hero.tsx` | `ScrollExpandMedia` — page immersive `/experience` |
+| `zoom-parallax.tsx` | `ZoomParallax` — section « Fais défiler, ça zoome » |
+| `design-testimonial.tsx` | `Testimonial` — section avis clients |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Les URLs d'images 21st ont été remplacées par des photos Unsplash ; les couleurs
+et textes sont passés à l'identité Street Food.
 
-## Learn More
+## Personnaliser
 
-To learn more about Next.js, take a look at the following resources:
+- **Coordonnées / WhatsApp / réseaux** → `src/lib/site.ts` (numéro WhatsApp au
+  format international, chiffres uniquement).
+- **Menu et prix** → `src/lib/menu-data.ts`.
+- **Couleurs / typo** → variables `--street-*` dans `src/app/globals.css`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Développement
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+```
 
-## Deploy on Vercel
+## Déploiement
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+vercel deploy --prod
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Suite possible
+
+- Back-office Supabase (tables `menu_items`, `orders`, `promotions`, `reviews`…)
+  pour gérer le menu et recevoir les commandes sans passer par WhatsApp.
+- Feed Instagram/TikTok réel dans la galerie.
+- Domaine personnalisé.
